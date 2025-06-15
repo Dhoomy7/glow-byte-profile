@@ -1,9 +1,13 @@
-
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars, Environment, Float } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 import PlayerCube from "./PlayerCube";
 import React from "react";
+import IntroPanel3D from "./IntroPanel3D";
+import AboutPanel3D from "./AboutPanel3D";
+import ProjectPanel3D from "./ProjectPanel3D";
+import SkillsOrbs3D from "./SkillsOrbs3D";
+import ContactPanel3D from "./ContactPanel3D";
 
 // Hacker/dev neon dark palette
 const LabRoom = () => (
@@ -44,6 +48,52 @@ const LabRoom = () => (
       <planeGeometry args={[10, 2.5]} />
       <meshStandardMaterial color="#14181b" emissive="#00ffd0" emissiveIntensity={0.11} />
     </mesh>
+    {/* --- Portfolio 3D Content --- */}
+    {/* 1. Main Intro Terminal */}
+    <IntroPanel3D />
+
+    {/* 2. About Me */}
+    <AboutPanel3D />
+
+    {/* 3. Project Boards */}
+    <ProjectPanel3D
+      position={[-4, 2.1, -5.8]}
+      rotation={[0, 0.22, 0]}
+      name="E-Commerce App"
+      tech="Flutter • Firebase • PHP • GetX"
+      github="https://github.com/atowi7/E-Commerce-App"
+      demoImg="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=220&q=80"
+    />
+    <ProjectPanel3D
+      position={[0, 1.6, -7.2]}
+      rotation={[0, -.01, 0]}
+      name="To-Do App"
+      tech="Flutter • SQFLite • Provider"
+      github="https://github.com/atowi7/to_do_app"
+      demoImg="https://images.unsplash.com/photo-1518770660439-4636190af475?w=220&q=80"
+    />
+    <ProjectPanel3D
+      position={[3.6, 2.1, -5.6]}
+      rotation={[0, -0.28, 0]}
+      name="Poll System"
+      tech="Flutter • Firebase"
+      github="https://github.com/atowi7/Poll-App"
+      demoImg="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=220&q=80"
+    />
+    <ProjectPanel3D
+      position={[7, 1.8, 2]}
+      rotation={[0, -1.1, 0]}
+      name="InstaKit App"
+      tech="Flutter • REST APIs • Postman"
+      github="https://github.com/atowi7/InstaKit_App"
+      demoImg="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=220&q=80"
+    />
+
+    {/* 4. Skills Orbs Area */}
+    <SkillsOrbs3D />
+
+    {/* 5. Contact Panel */}
+    <ContactPanel3D />
   </group>
 );
 
