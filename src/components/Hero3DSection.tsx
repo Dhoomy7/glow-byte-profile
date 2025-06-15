@@ -3,19 +3,15 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef } from "react";
 import TypingTitle from "./TypingTitle";
+import { PersonStanding } from "lucide-react";
 
-const GlowingCube = () => (
+const FloatingPersonIcon = () => (
   <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-    <mesh scale={1.4}>
-      <boxGeometry args={[1.5, 1.5, 1.5]} />
-      <meshStandardMaterial
-        color="#39ff14"
-        emissive="#39ff14"
-        emissiveIntensity={1.8}
-        metalness={0.2}
-        roughness={0.3}
-      />
-    </mesh>
+    <Html center position={[0, 0, 0]} style={{ pointerEvents: "none" }}>
+      <div className="flex flex-col items-center">
+        <PersonStanding size={105} color="#39ff14" strokeWidth={2.4} className="drop-shadow-[0_0_18px_#39ff14cc]" />
+      </div>
+    </Html>
   </Float>
 );
 
@@ -56,7 +52,7 @@ const Hero3DSection = () => {
       >
         <ambientLight intensity={1.2} />
         <directionalLight position={[2, 4, 6]} color="#00fff7" intensity={1.5} />
-        <GlowingCube />
+        <FloatingPersonIcon />
         <GlowingRing />
         <Environment preset="night" />
         <OrbitControls
@@ -69,9 +65,10 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center pt-[170px]">
+          <div className="flex flex-col items-center pt-[270px]">
+            {/* Add more space above title since icon is bigger */}
             <TypingTitle />
-            <p className="text-lg md:text-2xl mt-2 text-neon-green glow-text font-semibold">
+            <p className="text-lg md:text-2xl mt-8 text-neon-green glow-text font-semibold">
               Flutter Developer | Giza, Cairo
             </p>
           </div>
