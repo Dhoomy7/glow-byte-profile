@@ -9,7 +9,7 @@ const ExperienceSection = () => (
     <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-3 text-center">Experience</h2>
     <div className="space-y-6 ml-2 text-base">
       <article>
-        <div className="font-semibold text-neon-green">Flutter Intern – Instakit (2024):</div>
+        <div className="font-semibold text-neon-blue">Flutter Intern – Instakit (2024):</div>
         <div>Built apps with Flutter using Provider & Firebase, integrated REST APIs, debugged with Postman.</div>
       </article>
       <article>
@@ -22,3 +22,4 @@ const ExperienceSection = () => (
 );
 
 export default ExperienceSection;
+
