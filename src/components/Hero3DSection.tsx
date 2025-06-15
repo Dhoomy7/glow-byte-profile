@@ -1,3 +1,4 @@
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef, useState } from "react";
@@ -75,15 +76,23 @@ const Hero3DSection = () => {
             <button
               aria-label="Scroll to about section"
               onClick={handleArrowClick}
-              className="relative z-10 mt-8 mb-[0.15rem] md:mb-2 bg-[#101820cc] rounded-full border-2 border-gradient-greenblue shadow-glow-green p-2 transition hover:bg-neon-green/30 focus-visible:ring-2 focus-visible:ring-neon-green active:scale-95 animate-bounce pointer-events-auto"
+              className="relative z-10 mt-8 mb-[0.15rem] md:mb-2 bg-transparent border-none shadow-none p-0 transition focus-visible:ring-2 focus-visible:ring-neon-green active:scale-95 animate-bounce pointer-events-auto group"
               style={{
                 transition: "background 0.18s, transform 0.15s",
               }}
             >
               {/* ArrowDown icon */}
-              <svg width={28} height={28} strokeWidth={2.5} className="text-neon-green drop-shadow-[0_0_8px_#39ff14] animate-pulse"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width={38}
+                height={38}
+                strokeWidth={2.4}
+                className="text-neon-green drop-shadow-[0_0_8px_#39ff14] animate-pulse group-hover:scale-110 transition-transform duration-200"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <polyline points="19 12 12 19 5 12" />
               </svg>
@@ -105,3 +114,4 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
+

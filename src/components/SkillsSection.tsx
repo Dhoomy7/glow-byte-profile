@@ -39,14 +39,14 @@ const SkillsSection = () => (
             heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         }}
-        className="bg-[#101820cc] rounded-full border-2 border-gradient-greenblue shadow-glow-green p-2 transition hover:bg-accent-green/30 focus-visible:ring-2 focus-visible:ring-accent-green active:scale-95"
+        className="bg-transparent border-none shadow-none p-0 transition focus-visible:ring-2 focus-visible:ring-accent-green active:scale-95 group"
         style={{
           transition: "background 0.18s, transform 0.15s",
         }}
       >
         <ArrowUp
-          size={28}
-          className="text-accent-green drop-shadow-[0_0_8px_#39ff14] animate-pulse"
+          size={38}
+          className="text-accent-green drop-shadow-[0_0_8px_#39ff14] animate-pulse group-hover:scale-110 transition-transform duration-200"
           strokeWidth={2.5}
         />
       </button>
@@ -66,3 +66,4 @@ const SkillsSection = () => (
 );
 
 export default SkillsSection;
+
