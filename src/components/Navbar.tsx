@@ -4,6 +4,7 @@ import { Github, Mail, Linkedin } from "lucide-react";
 const navItems = [
   { label: "About", to: "#about" },
   { label: "Experience", to: "#experience" },
+  { label: "Education", to: "#education" }, // Added Education link
   { label: "Projects", to: "#projects" },
   { label: "Skills", to: "#skills" },
   { label: "Contact", to: "#contact" },

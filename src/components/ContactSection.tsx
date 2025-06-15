@@ -53,7 +53,16 @@ const ContactSection = () => {
               rows={5}
             />
           </div>
-          <Button type="submit" className="bg-neon-blue hover:bg-neon-green transition-colors w-full font-bold text-lg">Send Message</Button>
+          <Button
+            type="submit"
+            className="w-full font-bold text-lg rounded-2xl bg-[#39ff14] hover:bg-[#3fff60] shadow-[0_0_24px_8px_#39ff1499] text-black tracking-widest border-none transition-colors duration-200"
+            style={{
+              boxShadow: "0 0 18px 4px #39ff14cc, 0 0 32px 4px #39ff1440",
+              letterSpacing: "0.12em",
+            }}
+          >
+            SEND
+          </Button>
         </form>
       )}
     </section>
