@@ -1,28 +1,32 @@
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-// Floating image with 3D movement, showing the user's uploaded image
-const FloatingProfileImage = () => (
-  <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-    <Html center position={[0, 0, 0]} style={{ pointerEvents: "none" }}>
-      <div className="flex flex-col items-center">
-        <img
-          src="/lovable-uploads/c11983e2-dd32-4a74-9189-9d895231dc19.png"
-          alt="Profile"
-          className="rounded-full shadow-xl border-4 border-neon-green drop-shadow-[0_0_28px_#39ff14cc]"
-          style={{
-            width: 180,
-            height: 180,
-            objectFit: "cover",
-            background: "#101820",
-          }}
-        />
-      </div>
-    </Html>
-  </Float>
-);
+// Floating image with 3D movement, showing the user's uploaded image, with fallback
+const FloatingProfileImage = () => {
+  const [imgSrc, setImgSrc] = useState("/lovable-uploads/c11983e2-dd32-4a74-9189-9d895231dc19.png");
+  return (
+    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
+      <Html center position={[0, 0, 0]} style={{ pointerEvents: "none" }}>
+        <div className="flex flex-col items-center">
+          <img
+            src={imgSrc}
+            alt="Profile"
+            onError={() => setImgSrc("https://placehold.co/180x180?text=No+Image")}
+            style={{
+              width: 180,
+              height: 180,
+              objectFit: "cover",
+              background: "#101820",
+              display: "block",
+            }}
+          />
+        </div>
+      </Html>
+    </Float>
+  );
+};
 
 const GlowingRing = () => (
   <Float speed={1.6} rotationIntensity={2.3} floatIntensity={0.5}>
@@ -74,7 +78,6 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          {/* Vertical space between image and text */}
           <div className="flex flex-col items-center pt-[295px]">
             <div className="h-6" />
             <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2">
@@ -91,4 +94,3 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
-
