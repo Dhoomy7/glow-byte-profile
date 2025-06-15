@@ -26,11 +26,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-50 left-1/2 top-8 -translate-x-1/2 px-6 py-4 bg-[#101820dd] border border-neon-blue rounded-2xl shadow-glow-blue backdrop-blur-xl flex items-center gap-7 animate-fade-in">
+    <nav className="fixed z-50 left-1/2 top-7 -translate-x-1/2 px-6 py-4 bg-[#151f28cc] border border-gradient-greenblue rounded-3xl shadow-glow-blue backdrop-blur-2xl flex items-center gap-8 animate-fade-in navbar-glass">
       {/* Hamburger for mobile */}
       {isMobile && (
         <button
-          className="text-neon-blue p-2 rounded-lg border border-neon-green bg-[#101820] hover:bg-[#232e37] mr-3 md:hidden"
+          className="text-accent-blue p-2 rounded-xl border border-accent-green bg-[#101820ec] hover:bg-[#18444f] mr-3 md:hidden"
           onClick={() => setMenuOpen(prev => !prev)}
           aria-label="Toggle navigation menu"
         >
@@ -41,12 +41,12 @@ const Navbar = () => {
       <ul
         className={
           isMobile
-            ? `absolute left-0 w-full top-[62px] px-6 z-40 transition-all duration-200 ${
+            ? `absolute left-0 w-full top-[62px] px-7 z-40 transition-all duration-200 ${
                 menuOpen
-                  ? "flex flex-col gap-3 py-4 bg-[#18222a] border-b border-neon-blue rounded-b-2xl shadow-glow-blue"
+                  ? "flex flex-col gap-4 py-4 bg-[#192b38ee] border-b border-gradient-greenblue rounded-b-2xl shadow-glow-blue"
                   : "hidden"
               }`
-            : "flex gap-6"
+            : "flex gap-7"
         }
         style={
           isMobile
@@ -60,7 +60,7 @@ const Navbar = () => {
           <li key={item.label}>
             <a
               href={item.to}
-              className="hover:text-neon-green transition-colors duration-200 text-neon-blue text-md font-semibold tracking-wide font-mono"
+              className="hover:text-accent-green transition-colors duration-170 text-accent-blue text-lg font-semibold tracking-wide font-mono drop-shadow-[0_0_6px_#22d3ee25]"
               onClick={handleNavClick}
             >
               {item.label}
@@ -79,9 +79,9 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className="rounded-full hover:bg-[#232e37] p-2 transition-colors border border-transparent hover:border-neon-green"
+            className="rounded-full hover:bg-[#24fd3412] p-2 transition-colors border border-transparent hover:border-accent-green"
           >
-            <social.icon className="text-neon-blue hover:text-neon-green" size={20} />
+            <social.icon className="text-accent-blue hover:text-accent-green" size={20} />
           </a>
         ))}
       </div>
