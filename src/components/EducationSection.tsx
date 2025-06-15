@@ -1,6 +1,9 @@
 
 const EducationSection = () => (
-  <section id="education" className="w-full max-w-3xl mx-auto mb-12 text-lg bg-card-dark/80 rounded-lg p-9 shadow-glow-blue border-l-4 border-neon-blue backdrop-blur-lg">
+  <section
+    id="education"
+    className="w-full max-w-3xl mx-auto mb-12 text-lg bg-card-dark/80 rounded-lg p-9 shadow-glow-blue border-l-4 border-neon-blue backdrop-blur-lg animate-section-3d"
+  >
     <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-3">Education</h2>
     <ul className="list-disc pl-6">
       <li>

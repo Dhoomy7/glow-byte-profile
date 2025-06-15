@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,5 +51,31 @@ body {
 @media (max-width: 900px) {
   body {
     background-size: 24px 24px;
+  }
+}
+
+/* 3D section animation */
+@layer utilities {
+  .animate-section-3d {
+    animation: sectionIn3d 0.8s cubic-bezier(0.39, 0.58, 0.57, 1) both;
+    will-change: transform, opacity;
+    perspective: 2000px;
+  }
+}
+@keyframes sectionIn3d {
+  0% {
+    opacity: 0;
+    transform: rotateY(-45deg) translateY(60px) scale(0.92);
+    filter: blur(8px) brightness(1.1);
+  }
+  60% {
+    opacity: 1;
+    transform: rotateY(12deg) translateY(-10px) scale(1.01);
+    filter: blur(0) brightness(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: blur(0) brightness(1);
   }
 }

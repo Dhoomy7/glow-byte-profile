@@ -1,6 +1,9 @@
 
 const AboutSection = () => (
-  <section id="about" className="w-full max-w-3xl mx-auto mt-24 mb-12 text-lg md:text-xl text-slate-100 bg-card-dark/80 rounded-lg p-9 shadow-glow-green backdrop-blur-lg border-l-4 border-neon-green">
+  <section
+    id="about"
+    className="w-full max-w-3xl mx-auto mt-24 mb-12 text-lg md:text-xl text-slate-100 bg-card-dark/80 rounded-lg p-9 shadow-glow-green backdrop-blur-lg border-l-4 border-neon-green animate-section-3d"
+  >
     <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-5">About Me</h2>
     <p>
       <span className="font-bold text-neon-green">Name:</span> Abdulrahman Kamal Alatowi<br />
@@ -11,5 +14,4 @@ const AboutSection = () => (
     </p>
   </section>
 );
-
 export default AboutSection;

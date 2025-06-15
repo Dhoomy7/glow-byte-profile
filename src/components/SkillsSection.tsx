@@ -2,15 +2,30 @@
 import SkillBadge from "./SkillBadge";
 
 const skills = [
-  "Flutter", "Dart", "Firebase", "Provider", "GetX", "REST APIs", "PHP", "MySQL", "HTML", "CSS", "JavaScript", "Postman", "OOP"
+  "Flutter",
+  "Dart",
+  "Firebase",
+  "Provider",
+  "GetX",
+  "REST APIs",
+  "PHP",
+  "MySQL",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Postman",
+  "OOP",
 ];
 
 const SkillsSection = () => (
-  <section id="skills" className="w-full max-w-3xl mx-auto mb-12 bg-card-dark/80 rounded-lg p-9 shadow-glow-green border-l-4 border-neon-green backdrop-blur-lg">
+  <section
+    id="skills"
+    className="w-full max-w-3xl mx-auto mb-12 bg-card-dark/80 rounded-lg p-9 shadow-glow-green border-l-4 border-neon-green backdrop-blur-lg animate-section-3d"
+  >
     <h2 className="text-2xl md:text-3xl font-bold glow-text mb-3">Skills</h2>
     <div className="flex flex-wrap mt-2">
-      {skills.map(skill => (
-        <SkillBadge key={skill} highlight={["Flutter","Dart","Firebase"].includes(skill)}>
+      {skills.map((skill) => (
+        <SkillBadge key={skill} highlight={["Flutter", "Dart", "Firebase"].includes(skill)}>
           {skill}
         </SkillBadge>
       ))}
