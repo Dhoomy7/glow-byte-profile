@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import SectionDownArrow from "./SectionDownArrow";
 
 const ContactSection = () => {
   const [sent, setSent] = useState(false);
@@ -18,9 +19,9 @@ const ContactSection = () => {
       id="contact"
       className="w-full max-w-3xl mx-auto mb-12 bg-card-dark/80 rounded-lg p-9 shadow-glow-blue border-l-4 border-neon-blue backdrop-blur-lg animate-section-3d"
     >
-      <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-5">Contact</h2>
+      <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-5 text-center">Contact</h2>
       {sent ? (
-        <div className="text-green-400 text-lg font-semibold">Thank you! Your message has been sent.</div>
+        <div className="text-green-400 text-lg font-semibold text-center">Thank you! Your message has been sent.</div>
       ) : (
         <form className="space-y-6" onSubmit={handleSubmit} autoComplete="off">
           <div>
@@ -65,6 +66,7 @@ const ContactSection = () => {
           </Button>
         </form>
       )}
+      {/* No next arrow since Contact is the last section */}
     </section>
   );
 };

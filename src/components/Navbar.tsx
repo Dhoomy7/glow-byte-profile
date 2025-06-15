@@ -14,7 +14,7 @@ const navItems = [
 
 const socials = [
   { icon: Github, url: "https://github.com/atowi7", label: "GitHub" },
-  { icon: Linkedin, url: "https://atowi7.com/", label: "Website" },
+  { icon: Linkedin, url: "https://www.linkedin.com/in/atowi7", label: "LinkedIn" },
   { icon: Mail, url: "mailto:dhoom.sedge@gmail.com", label: "Email" },
 ];
 

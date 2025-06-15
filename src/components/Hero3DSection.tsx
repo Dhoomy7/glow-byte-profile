@@ -1,8 +1,8 @@
-
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef, useState } from "react";
 import { ArrowDown } from "lucide-react";
+import SectionDownArrow from "./SectionDownArrow";
 
 // Floating image with 3D movement, showing the user's uploaded image, with fallback
 const FloatingProfileImage = () => {
@@ -87,40 +87,18 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center pt-[295px]">
-            <div className="h-6" />
-            <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2">
+          {/* IMPROVED HERO LAYOUT + SPACING */}
+          <div className="flex flex-col items-center justify-center h-full w-full pt-[170px] pb-0">
+            {/* Centered texts -- both on their own row */}
+            <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2 text-center w-full">
               Hi, I&apos;m Abdulrahman
             </h1>
-            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-2 font-mono">
+            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-2 font-mono text-center w-full">
               Mobile App Developer
             </h2>
-            {/* Down arrow button for navigation to About */}
-            <button
-              aria-label="Scroll to About section"
-              onClick={handleArrowClick}
-              className="mt-8 pointer-events-auto bg-[#101820cc] rounded-full border-2 border-neon-green shadow-glow-green p-3 transition hover:bg-neon-green/30 focus-visible:ring-2 focus-visible:ring-neon-green active:scale-95 animate-bounce"
-              style={{
-                transition: "background 0.18s, transform 0.15s",
-              }}
-            >
-              <ArrowDown
-                size={32}
-                className="text-neon-green drop-shadow-[0_0_8px_#39ff14] animate-pulse"
-                strokeWidth={2.5}
-              />
-            </button>
-            <style>{`
-              @media (min-width: 700px) {
-                .animate-bounce {
-                  animation: bounceDownArrow 1.6s cubic-bezier(.28,.84,.42,1) infinite;
-                }
-              }
-              @keyframes bounceDownArrow {
-                0%, 100% { transform: translateY(0);}
-                50% { transform: translateY(14px);}
-              }
-            `}</style>
+            {/* Improved vertical spacing */}
+            <div className="h-3" />
+            <SectionDownArrow nextSectionId="about" />
           </div>
         </Html>
       </Canvas>
@@ -129,4 +107,3 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
-

@@ -1,10 +1,12 @@
 
+import SectionDownArrow from "./SectionDownArrow";
+
 const ExperienceSection = () => (
   <section
     id="experience"
     className="w-full max-w-3xl mx-auto mb-12 bg-card-dark/80 rounded-lg p-9 shadow-glow-blue border-l-4 border-neon-green backdrop-blur-lg animate-section-3d"
   >
-    <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-3">Experience</h2>
+    <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-3 text-center">Experience</h2>
     <div className="space-y-6 ml-2 text-base">
       <article>
         <div className="font-semibold text-neon-green">Flutter Intern – Instakit (2024):</div>
@@ -15,6 +17,7 @@ const ExperienceSection = () => (
         <div>Worked on Android apps and Firebase-based websites, contributing to both front-end and back-end.</div>
       </article>
     </div>
+    <SectionDownArrow nextSectionId="education" />
   </section>
 );
 
