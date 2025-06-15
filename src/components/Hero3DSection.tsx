@@ -70,7 +70,7 @@ const Hero3DSection = () => {
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
           <div
-            className="flex flex-col items-center justify-center h-full w-full gap-4 pt-[125px] md:pt-[170px] pb-0"
+            className="flex flex-col items-center justify-center h-full w-full gap-4 pt-[170px] md:pt-[220px] pb-0"
           >
             {/* New Image block before the name */}
             <div className="flex justify-center mb-4 pointer-events-auto">
