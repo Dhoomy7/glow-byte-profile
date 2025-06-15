@@ -2,13 +2,23 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef } from "react";
-import { PersonStanding } from "lucide-react";
 
-const FloatingPersonIcon = () => (
+// Floating image with 3D movement (replaces PersonStanding icon)
+const FloatingProfileImage = () => (
   <Float speed={2} rotationIntensity={1} floatIntensity={2}>
     <Html center position={[0, 0, 0]} style={{ pointerEvents: "none" }}>
       <div className="flex flex-col items-center">
-        <PersonStanding size={105} color="#39ff14" strokeWidth={2.4} className="drop-shadow-[0_0_18px_#39ff14cc]" />
+        <img
+          src="/lovable-uploads/c0d08b57-9cc4-444e-a9de-664c90e2ccdf.png"
+          alt="Profile"
+          className="rounded-full shadow-xl border-4 border-neon-green drop-shadow-[0_0_28px_#39ff14cc]"
+          style={{
+            width: 130,
+            height: 130,
+            objectFit: "cover",
+            background: "#101820",
+          }}
+        />
       </div>
     </Html>
   </Float>
@@ -51,7 +61,7 @@ const Hero3DSection = () => {
       >
         <ambientLight intensity={1.2} />
         <directionalLight position={[2, 4, 6]} color="#00fff7" intensity={1.5} />
-        <FloatingPersonIcon />
+        <FloatingProfileImage />
         <GlowingRing />
         <Environment preset="night" />
         <OrbitControls
@@ -64,8 +74,9 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center pt-[210px]">
-            <div className="h-14" /> {/* Increase vertical space */}
+          {/* Increase vertical space between image and text */}
+          <div className="flex flex-col items-center pt-[260px]"> 
+            <div className="h-8" /> {/* Additional space below image */}
             <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2">
               Hi, I&apos;m Abdulrahman
             </h1>
