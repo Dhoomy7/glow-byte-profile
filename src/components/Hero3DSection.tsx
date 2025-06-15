@@ -1,7 +1,7 @@
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef, useState } from "react";
-import { ArrowDown } from "lucide-react";
 import SectionDownArrow from "./SectionDownArrow";
 
 // Floating image with 3D movement, showing the user's uploaded image, with fallback
@@ -62,10 +62,7 @@ const Hero3DSection = () => {
       className="relative min-h-[520px] md:min-h-[650px] w-full rounded-xl flex items-center justify-center shadow-lg overflow-hidden"
       style={{ background: "rgba(15,24,34,0.91)" }}
     >
-      <div className="absolute inset-0 z-10 pointer-events-none select-none">
-        <div className="absolute left-10 bottom-10 w-36 h-36 bg-neon-blue rounded-full blur-3xl opacity-40 animate-pulse"></div>
-        <div className="absolute right-10 top-12 w-44 h-44 bg-neon-green rounded-full blur-[60px] opacity-30 animate-pulse"></div>
-      </div>
+      {/* Removed circles in the background */}
       <Canvas
         camera={{ position: [0, 0, 5], fov: 55 }}
         shadows
@@ -88,16 +85,14 @@ const Hero3DSection = () => {
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
           {/* IMPROVED HERO LAYOUT + SPACING */}
-          <div className="flex flex-col items-center justify-center h-full w-full pt-[170px] pb-0">
-            {/* Centered texts -- both on their own row */}
-            <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2 text-center w-full">
+          <div className="flex flex-col items-center justify-center h-full w-full pt-[170px] pb-0 gap-4">
+            {/* Centered texts -- both on their own row, gap for equal spacing */}
+            <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-0 text-center w-full">
               Hi, I&apos;m Abdulrahman
             </h1>
-            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-2 font-mono text-center w-full">
+            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-0 font-mono text-center w-full">
               Mobile App Developer
             </h2>
-            {/* Improved vertical spacing */}
-            <div className="h-3" />
             <SectionDownArrow nextSectionId="about" />
           </div>
         </Html>

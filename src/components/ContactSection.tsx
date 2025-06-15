@@ -32,6 +32,7 @@ const ContactSection = () => {
               id="name"
               placeholder="Your Name"
               required
+              className="text-neon-green placeholder:text-neon-blue"
             />
           </div>
           <div>
@@ -42,6 +43,7 @@ const ContactSection = () => {
               id="email"
               placeholder="you@email.com"
               required
+              className="text-neon-green placeholder:text-neon-blue"
             />
           </div>
           <div>
@@ -52,6 +54,7 @@ const ContactSection = () => {
               placeholder="Type your message here..."
               required
               rows={5}
+              className="text-neon-green placeholder:text-neon-blue"
             />
           </div>
           <Button
