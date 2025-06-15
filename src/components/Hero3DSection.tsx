@@ -72,7 +72,7 @@ const Hero3DSection = () => {
         <ambientLight intensity={1.2} />
         <directionalLight position={[2, 4, 6]} color="#00fff7" intensity={1.5} />
         <FloatingProfileImage />
-        <GlowingRing />
+        {/* GlowingRing removed as requested */}
         <Environment preset="night" />
         <OrbitControls
           enableZoom={false}
@@ -102,3 +102,4 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
+
