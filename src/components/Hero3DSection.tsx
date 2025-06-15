@@ -2,6 +2,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef, useState } from "react";
+import { ArrowDown } from "lucide-react";
 
 // Floating image with 3D movement, showing the user's uploaded image, with fallback
 const FloatingProfileImage = () => {
@@ -47,6 +48,14 @@ const GlowingRing = () => (
 const Hero3DSection = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
 
+  // Smooth scroll to #about when arrow button is clicked
+  const handleArrowClick = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section
       ref={canvasRef}
@@ -86,6 +95,32 @@ const Hero3DSection = () => {
             <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-2 font-mono">
               Mobile App Developer
             </h2>
+            {/* Down arrow button for navigation to About */}
+            <button
+              aria-label="Scroll to About section"
+              onClick={handleArrowClick}
+              className="mt-8 pointer-events-auto bg-[#101820cc] rounded-full border-2 border-neon-green shadow-glow-green p-3 transition hover:bg-neon-green/30 focus-visible:ring-2 focus-visible:ring-neon-green active:scale-95 animate-bounce"
+              style={{
+                transition: "background 0.18s, transform 0.15s",
+              }}
+            >
+              <ArrowDown
+                size={32}
+                className="text-neon-green drop-shadow-[0_0_8px_#39ff14] animate-pulse"
+                strokeWidth={2.5}
+              />
+            </button>
+            <style>{`
+              @media (min-width: 700px) {
+                .animate-bounce {
+                  animation: bounceDownArrow 1.6s cubic-bezier(.28,.84,.42,1) infinite;
+                }
+              }
+              @keyframes bounceDownArrow {
+                0%, 100% { transform: translateY(0);}
+                50% { transform: translateY(14px);}
+              }
+            `}</style>
           </div>
         </Html>
       </Canvas>
@@ -94,3 +129,4 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
+
