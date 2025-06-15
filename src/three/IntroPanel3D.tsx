@@ -1,20 +1,26 @@
 
 import React from "react";
-import { Float } from "@react-three/drei";
-import { Html } from "@react-three/drei";
+import { Float, Html } from "@react-three/drei";
 
-// Hacker terminal-style intro panel with typing animation
-export default function IntroPanel3D() {
+interface IntroPanel3DProps {
+  position: [number, number, number];
+  rotation?: [number, number, number];
+}
+
+export default function IntroPanel3D({ position, rotation }: IntroPanel3DProps) {
   return (
-    <Float floatIntensity={1.6} speed={2.4}>
-      <mesh position={[0, 2.7, 7.2]} rotation={[0, Math.PI, 0]}>
-        <planeGeometry args={[7, 2.2]} />
-        <meshStandardMaterial color="#10181e" emissive="#00ffd0" emissiveIntensity={0.21} />
-        <Html transform position={[0, 0, 0.06]} style={{ width: "100%", height: "100%" }}>
+    <Float floatIntensity={2.1} speed={1.3}>
+      <mesh position={position} rotation={rotation}>
+        <planeGeometry args={[8.5, 2.6]} />
+        <meshStandardMaterial color="#171f2d" emissive="#39ff14" emissiveIntensity={0.19} />
+        <Html transform position={[0, 0, 0.10]} style={{width:"100%",height:"100%"}}>
           <div
-            className="w-full h-full flex flex-col items-center justify-center select-none pointer-events-none"
+            className="flex flex-col w-full h-full justify-center items-center p-8 text-center"
           >
-            <span className="text-2xl md:text-3xl xl:text-4xl font-mono font-bold glow-text animate-section-3d" style={{whiteSpace: "pre", letterSpacing: ".01em"}}>
+            <span
+              className="text-2xl md:text-3xl xl:text-4xl font-mono font-bold glow-text animate-section-3d"
+              style={{whiteSpace: "pre", letterSpacing: ".01em"}}
+            >
               <span className="typing-hacker">
                 Hi, I’m Abdulrahman Kamal Alatowi
                 <br />
@@ -52,4 +58,3 @@ export default function IntroPanel3D() {
     </Float>
   );
 }
-

@@ -6,42 +6,68 @@ import { FaRust } from "react-icons/fa6"; // Example for REST APIs
 import { FaDatabase } from "react-icons/fa";
 import { FaListCheck } from "react-icons/fa6";
 
-// We'll use simple colored spheres for each skill with glow.
+type SkillsOrbs3DProps = {
+  center: [number, number, number];
+  radius: number;
+};
+
+// Equally space skill orbs around a circle (or grid for >8)
 const skills = [
-  { name: "Flutter",    color: "#42a5f5", pos: [2.5,3.5,-1], icon: <SiFlutter /> },
-  { name: "Dart",       color: "#00c4b3", pos: [3.7,2.4,-3], icon: <SiDart /> },
-  { name: "Firebase",   color: "#ffa000", pos: [4.3,2.1,1.4], icon: <SiFirebase /> },
-  { name: "PHP",        color: "#7377ad", pos: [2.5,1.5,3], icon: <SiPhp /> },
-  { name: "REST APIs",  color: "#12f8c2", pos: [4.9,2.7,-1], icon: <FaRust /> },
-  { name: "Provider",   color: "#56e366", pos: [6.2,3.4,0], icon: <FaDatabase /> },
-  { name: "GetX",       color: "#7f39fb", pos: [5.2,1.2,-0.8], icon: <FaListCheck /> },
-  { name: "Postman",    color: "#ff6c37", pos: [6.7,2.1,2.2], icon: <SiPostman /> },
+  { name: "Flutter",    color: "#42a5f5", icon: <SiFlutter /> },
+  { name: "Dart",       color: "#00c4b3", icon: <SiDart /> },
+  { name: "Firebase",   color: "#ffa000", icon: <SiFirebase /> },
+  { name: "PHP",        color: "#7377ad", icon: <SiPhp /> },
+  { name: "REST APIs",  color: "#12f8c2", icon: <FaRust /> },
+  { name: "Provider",   color: "#56e366", icon: <FaDatabase /> },
+  { name: "GetX",       color: "#7f39fb", icon: <FaListCheck /> },
+  { name: "Postman",    color: "#ff6c37", icon: <SiPostman /> },
 ];
 
-export default function SkillsOrbs3D() {
+export default function SkillsOrbs3D({ center, radius }: SkillsOrbs3DProps) {
+  const cx = center[0], cy = center[1], cz = center[2];
+  const N = skills.length;
+
   return (
     <>
-      {skills.map((skill, idx) => (
-        <Float
-          key={skill.name}
-          floatIntensity={1.5}
-          speed={1.8 + idx * 0.17}
-          rotationIntensity={0.8}
-        >
-          <mesh position={skill.pos as [number, number, number]}>
-            <sphereGeometry args={[0.45, 32, 32]} />
-            <meshStandardMaterial color={skill.color} emissive={skill.color} emissiveIntensity={0.55} metalness={0.52} />
-            <Html transform position={[0, 0, 0.5]}>
-              <div className="w-14 h-14 flex flex-col items-center justify-center">
-                <div className="text-3xl">{skill.icon}</div>
-                <div className="text-xs mt-1 rounded px-2 py-1 bg-black/80 text-white font-mono shadow-glow-green pointer-events-auto">
-                  {skill.name}
+      {skills.map((skill, idx) => {
+        // Arrange in a circle, with some vertical spread
+        const angle = (2 * Math.PI * idx) / N;
+        const x = cx + radius * Math.cos(angle);
+        const z = cz + radius * Math.sin(angle);
+        const y = cy + 0.35 * Math.sin(angle * 1.4); // Slight vertical offset for 3D
+
+        return (
+          <Float
+            key={skill.name}
+            floatIntensity={1.1}
+            speed={1.21 + idx*0.13}
+            rotationIntensity={0.6}
+          >
+            <mesh position={[x, y, z]}>
+              <sphereGeometry args={[0.48, 32, 32]} />
+              <meshStandardMaterial color={skill.color} emissive={skill.color} emissiveIntensity={0.49} metalness={0.6} />
+              <Html transform position={[0, 0, 0.55]}>
+                <div className="w-16 h-16 flex flex-col items-center justify-center group select-none">
+                  <div className="text-3xl group-hover:scale-110 group-hover:animate-glow transition-transform duration-150">{skill.icon}</div>
+                  <div className="text-xs mt-1 rounded px-2 py-1 bg-black/85 text-white font-mono shadow-glow-green opacity-90 pointer-events-auto group-hover:bg-neon-green/10 group-hover:text-neon-green transition-all whitespace-nowrap font-semibold">
+                    {skill.name}
+                  </div>
                 </div>
-              </div>
-            </Html>
-          </mesh>
-        </Float>
-      ))}
+              </Html>
+            </mesh>
+          </Float>
+        );
+      })}
+      {/* Skill area signpost */}
+      <Float floatIntensity={1.4} speed={1.1}>
+        <mesh position={[cx, cy + 2.2, cz]}>
+          <planeGeometry args={[3.25, 0.67]} />
+          <meshStandardMaterial color="#171f2d" emissive="#00fff7" emissiveIntensity={0.13} />
+          <Html transform position={[0,0,0.06]}>
+            <div className="text-neon-blue font-mono text-base tracking-wide text-center glow-text font-bold py-1">Skills</div>
+          </Html>
+        </mesh>
+      </Float>
     </>
   );
 }
