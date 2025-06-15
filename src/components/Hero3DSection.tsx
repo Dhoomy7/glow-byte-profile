@@ -69,7 +69,9 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center justify-center h-full w-full pt-[110px] pb-0 gap-4">
+          <div
+            className="flex flex-col items-center justify-center h-full w-full gap-4 pt-[125px] md:pt-[170px] pb-0"
+          >
             {/* New Image block before the name */}
             <div className="flex justify-center mb-4 pointer-events-auto">
               <img
@@ -134,4 +136,3 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
-
