@@ -37,7 +37,7 @@ const projects = [
 const ProjectsSection = () => (
   <section
     id="projects"
-    className="w-full max-w-3xl mx-auto mb-12 bg-card-dark/80 rounded-lg p-9 shadow-glow-blue border-l-4 border-neon-blue backdrop-blur-lg animate-section-3d"
+    className="w-full max-w-3xl mx-auto mb-12 text-lg bg-card-dark/80 rounded-lg p-9 shadow-glow-blue border-l-4 border-neon-blue backdrop-blur-lg animate-section-3d"
   >
     <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-3 text-center">Projects</h2>
     <div className="space-y-3">

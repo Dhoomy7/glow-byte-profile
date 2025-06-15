@@ -21,9 +21,9 @@ const skills = [
 const SkillsSection = () => (
   <section
     id="skills"
-    className="w-full max-w-3xl mx-auto mb-12 card-glass p-10 backdrop-blur-lg animate-section-3d"
+    className="w-full max-w-3xl mx-auto mb-12 bg-card-dark/80 rounded-lg p-10 shadow-glow-blue border-l-4 border-neon-blue backdrop-blur-lg animate-section-3d"
   >
-    <h2 className="text-2xl md:text-3xl font-bold text-gradient-blue mb-3 text-center">Skills</h2>
+    <h2 className="text-2xl md:text-3xl font-bold glow-blue-text mb-3 text-center">Skills</h2>
     <div className="flex flex-wrap mt-2">
       {skills.map((skill) => (
         <SkillBadge key={skill}>{skill}</SkillBadge>
@@ -66,4 +66,3 @@ const SkillsSection = () => (
 );
 
 export default SkillsSection;
-
