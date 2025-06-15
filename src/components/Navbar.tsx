@@ -1,4 +1,3 @@
-
 import { Github, Mail, Linkedin, Menu } from "lucide-react";
 import { useState } from "react";
 import { useIsMobile } from "../hooks/use-mobile";
@@ -27,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-50 left-1/2 top-7 -translate-x-1/2 px-6 py-4 flex items-center gap-8 animate-fade-in navbar-glass">
+    <nav className="fixed z-50 left-1/2 top-7 -translate-x-1/2 px-6 py-4 bg-[#151f28cc] border border-gradient-greenblue rounded-3xl shadow-glow-blue backdrop-blur-2xl flex items-center gap-8 animate-fade-in navbar-glass">
       {/* Hamburger for mobile */}
       {isMobile && (
         <button
@@ -91,4 +90,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
