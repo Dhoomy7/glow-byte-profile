@@ -3,7 +3,6 @@ import Hero3DSection from "../components/Hero3DSection";
 import AboutSection from "../components/AboutSection";
 import ProjectsSection from "../components/ProjectsSection";
 import SkillsSection from "../components/SkillsSection";
-import ContactSection from "../components/ContactSection";
 import Navbar from "../components/Navbar";
 import ExperienceSection from "../components/ExperienceSection";
 import EducationSection from "../components/EducationSection";
@@ -21,9 +20,10 @@ const Index = () => (
       <section id="education" className="scroll-mt-[104px]"><EducationSection /></section>
       <section id="projects" className="scroll-mt-[104px]"><ProjectsSection /></section>
       <section id="skills" className="scroll-mt-[104px]"><SkillsSection /></section>
-      <section id="contact" className="scroll-mt-[104px]"><ContactSection /></section>
+      {/* Contact section removed */}
     </div>
   </div>
 );
 
 export default Index;
+
