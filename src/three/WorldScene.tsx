@@ -1,4 +1,3 @@
-
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars, Environment, Float } from "@react-three/drei";
 import PlayerCube from "./PlayerCube";
@@ -65,7 +64,7 @@ export default function WorldScene() {
           depth={52}
           count={1500}
           factor={0.6}
-          color="#00fff7"
+          fill="#00fff7"
           fade
         />
         <OrbitControls enableZoom={false} enablePan={false} maxPolarAngle={Math.PI/2.1} minPolarAngle={0.5} />
