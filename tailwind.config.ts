@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -8,7 +9,6 @@ export default {
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
-	prefix: "",
 	theme: {
 		container: {
 			center: true,
@@ -18,78 +18,39 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'mono': ['JetBrains Mono', 'Consolas', 'monospace'],
+			},
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				'neon-green': '#39ff14',
+				'neon-blue': '#00fff7',
+				'neon-purple': '#ad00ff',
+				'dark-bg': '#101820',
+				'card-dark': '#171f2d',
 			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+			textShadow: {
+				'neon': '0 0 8px #39ff14, 0 0 16px #39ff14',
+				'neon-blue': '0 0 8px #00fff7, 0 0 16px #00fff7',
 			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+			boxShadow: {
+				'glow-green': "0 0 8px 2px #39ff14, 0 0 32px 4px #39ff1444",
+				'glow-blue': "0 0 8px 2px #00fff7, 0 0 32px 4px #00fff744",
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'glow': 'glowPulse 1.2s infinite alternate',
+			},
+			keyframes: {
+				glowPulse: {
+					'0%':   { filter: 'drop-shadow(0 0 8px #39ff14)' },
+					'100%': { filter: 'drop-shadow(0 0 32px #39ff14aa)' },
+				},
+			},
+			backgroundImage: {
+				'grid': "linear-gradient(90deg, rgba(80,255,220,0.03) 1px, transparent 1px), linear-gradient(180deg, rgba(80,255,220,0.03) 1px, transparent 1px)",
+			},
+			backgroundSize: {
+				'grid': '40px 40px',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
