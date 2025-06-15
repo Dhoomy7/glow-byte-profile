@@ -3,18 +3,18 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef } from "react";
 
-// Floating image with 3D movement (replaces PersonStanding icon)
+// Floating image with 3D movement, showing the user's uploaded image
 const FloatingProfileImage = () => (
   <Float speed={2} rotationIntensity={1} floatIntensity={2}>
     <Html center position={[0, 0, 0]} style={{ pointerEvents: "none" }}>
       <div className="flex flex-col items-center">
         <img
-          src="/lovable-uploads/c0d08b57-9cc4-444e-a9de-664c90e2ccdf.png"
+          src="/lovable-uploads/c11983e2-dd32-4a74-9189-9d895231dc19.png"
           alt="Profile"
           className="rounded-full shadow-xl border-4 border-neon-green drop-shadow-[0_0_28px_#39ff14cc]"
           style={{
-            width: 130,
-            height: 130,
+            width: 180,
+            height: 180,
             objectFit: "cover",
             background: "#101820",
           }}
@@ -74,13 +74,13 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          {/* Increase vertical space between image and text */}
-          <div className="flex flex-col items-center pt-[260px]"> 
-            <div className="h-8" /> {/* Additional space below image */}
+          {/* Vertical space between image and text */}
+          <div className="flex flex-col items-center pt-[295px]">
+            <div className="h-6" />
             <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2">
               Hi, I&apos;m Abdulrahman
             </h1>
-            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-2">
+            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-2 font-mono">
               Mobile App Developer
             </h2>
           </div>
@@ -91,3 +91,4 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
+
