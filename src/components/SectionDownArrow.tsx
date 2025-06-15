@@ -19,26 +19,24 @@ const SectionDownArrow = ({ nextSectionId, className = "" }: SectionDownArrowPro
       <button
         aria-label={`Scroll to ${nextSectionId} section`}
         onClick={handleClick}
-        className="bg-[#101820cc] rounded-full border-2 border-neon-green shadow-glow-green p-2 transition hover:bg-neon-green/30 focus-visible:ring-2 focus-visible:ring-neon-green active:scale-95 animate-bounce"
+        className="bg-transparent border-none shadow-none p-0 transition focus-visible:ring-2 focus-visible:ring-neon-green active:scale-95 animate-bounce pointer-events-auto group"
         style={{
           transition: "background 0.18s, transform 0.15s",
         }}
       >
         <ArrowDown
-          size={28}
-          className="text-neon-green drop-shadow-[0_0_8px_#39ff14] animate-pulse"
+          size={38}
+          className="text-neon-green drop-shadow-[0_0_8px_#39ff14] animate-pulse group-hover:scale-110 transition-transform duration-200"
           strokeWidth={2.5}
         />
       </button>
       <style>{`
-        @media (min-width: 700px) {
-          .animate-bounce {
-            animation: bounceDownArrow 1.6s cubic-bezier(.28,.84,.42,1) infinite;
-          }
+        .animate-bounce {
+          animation: bounceDownArrow 1.2s cubic-bezier(.28,.84,.42,1) infinite;
         }
         @keyframes bounceDownArrow {
           0%, 100% { transform: translateY(0);}
-          50% { transform: translateY(14px);}
+          50% { transform: translateY(12px);}
         }
       `}</style>
     </div>
