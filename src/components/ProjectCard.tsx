@@ -1,4 +1,3 @@
-
 import { Github } from "lucide-react";
 import React, { useRef } from "react";
 
@@ -13,7 +12,7 @@ type Project = {
 const FLUTTER_LOGO =
   "https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png";
 
-const ProjectCard = ({ name, description, stack, github }: Project) => {
+const ProjectCard = ({ name, description, stack, github, gif }: Project) => {
   // 3D tilt effect
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -48,9 +47,9 @@ const ProjectCard = ({ name, description, stack, github }: Project) => {
       </div>
       <div className="flex flex-col md:flex-row items-center gap-4 mb-3">
         <img
-          src={FLUTTER_LOGO}
-          alt="Flutter Logo"
-          className="w-[90px] h-[90px] rounded bg-white shadow-neon-blue border border-slate-600 object-contain transition-all duration-200 group-hover:scale-105"
+          src={gif}
+          alt={`${name} animation`}
+          className="w-[90px] h-[90px] rounded bg-black shadow-neon-blue border border-slate-600 object-cover transition-all duration-200 group-hover:scale-105"
         />
         <div className="text-base text-slate-100">{description}</div>
       </div>
@@ -69,4 +68,3 @@ const ProjectCard = ({ name, description, stack, github }: Project) => {
 };
 
 export default ProjectCard;
-

@@ -65,10 +65,16 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center pt-[270px]">
-            {/* Add more space above title since icon is bigger */}
-            <TypingTitle />
-            <p className="text-lg md:text-2xl mt-8 text-neon-green glow-text font-semibold">
+          <div className="flex flex-col items-center pt-[200px]">
+            {/* More space between icon and text */}
+            <div className="h-8" />
+            <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2">
+              Hi, I&apos;m Abdulrahman
+            </h1>
+            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-7">
+              Mobile App Developer
+            </h2>
+            <p className="text-lg md:text-2xl mt-4 text-neon-green glow-text font-semibold">
               Flutter Developer | Giza, Cairo
             </p>
           </div>
@@ -79,3 +85,4 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
+
