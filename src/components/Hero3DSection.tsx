@@ -2,7 +2,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef } from "react";
-import TypingTitle from "./TypingTitle";
 import { PersonStanding } from "lucide-react";
 
 const FloatingPersonIcon = () => (
@@ -65,18 +64,14 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center pt-[200px]">
-            {/* More space between icon and text */}
-            <div className="h-8" />
+          <div className="flex flex-col items-center pt-[210px]">
+            <div className="h-14" /> {/* Increase vertical space */}
             <h1 className="text-3xl md:text-5xl font-bold glow-text text-white font-mono mb-2">
               Hi, I&apos;m Abdulrahman
             </h1>
-            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-7">
+            <h2 className="text-xl md:text-2xl font-semibold text-neon-blue mb-2">
               Mobile App Developer
             </h2>
-            <p className="text-lg md:text-2xl mt-4 text-neon-green glow-text font-semibold">
-              Flutter Developer | Giza, Cairo
-            </p>
           </div>
         </Html>
       </Canvas>
@@ -85,4 +80,3 @@ const Hero3DSection = () => {
 };
 
 export default Hero3DSection;
-

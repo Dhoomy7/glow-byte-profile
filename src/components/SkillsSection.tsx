@@ -25,9 +25,7 @@ const SkillsSection = () => (
     <h2 className="text-2xl md:text-3xl font-bold glow-text mb-3">Skills</h2>
     <div className="flex flex-wrap mt-2">
       {skills.map((skill) => (
-        <SkillBadge key={skill} highlight={["Flutter", "Dart", "Firebase"].includes(skill)}>
-          {skill}
-        </SkillBadge>
+        <SkillBadge key={skill}>{skill}</SkillBadge>
       ))}
     </div>
   </section>
