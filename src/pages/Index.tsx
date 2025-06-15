@@ -16,14 +16,13 @@ const Index = () => (
       {/* Add scroll-mt to all sections */}
       <section id="hero" className="scroll-mt-[104px]"><Hero3DSection /></section>
       <section id="about" className="scroll-mt-[104px]"><AboutSection /></section>
-      <section id="experience" className="scroll-mt-[104px]"><ExperienceSection /></section>
+      {/* Place Education before Experience */}
       <section id="education" className="scroll-mt-[104px]"><EducationSection /></section>
+      <section id="experience" className="scroll-mt-[104px]"><ExperienceSection /></section>
       <section id="projects" className="scroll-mt-[104px]"><ProjectsSection /></section>
       <section id="skills" className="scroll-mt-[104px]"><SkillsSection /></section>
-      {/* Contact section removed */}
     </div>
   </div>
 );
 
 export default Index;
-
