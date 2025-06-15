@@ -1,5 +1,7 @@
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars, Environment, Float } from "@react-three/drei";
+import { Physics } from "@react-three/cannon";
 import PlayerCube from "./PlayerCube";
 import React from "react";
 
@@ -58,13 +60,14 @@ export default function WorldScene() {
         <pointLight position={[8, 7, -6]} intensity={0.6} color="#ad00ff" />
 
         <LabRoom />
-        <PlayerCube />
+        <Physics>
+          <PlayerCube />
+        </Physics>
         <Stars
           radius={30}
           depth={52}
           count={1500}
           factor={0.6}
-          fill="#00fff7"
           fade
         />
         <OrbitControls enableZoom={false} enablePan={false} maxPolarAngle={Math.PI/2.1} minPolarAngle={0.5} />
