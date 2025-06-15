@@ -26,15 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-50 left-1/2 top-7 -translate-x-1/2 px-7 py-4 navbar-glass rounded-3xl flex items-center gap-8 animate-fade-in max-w-[1050px]">
-      {/* Custom Logo Box */}
-      <a
-        href="/"
-        className="mr-2 p-1 rounded-lg border-4 border-neon-green shadow-glow-green bg-[#202c1b] flex items-center justify-center"
-        style={{ width: 32, height: 32, minWidth: 32, minHeight: 32 }}
-      >
-        <span className="block w-3 h-3 rounded-[2px] bg-neon-green"/>
-      </a>
+    <nav className="fixed z-50 left-1/2 top-7 -translate-x-1/2 px-6 py-4 bg-[#151f28cc] border border-gradient-greenblue rounded-3xl shadow-glow-blue backdrop-blur-2xl flex items-center gap-8 animate-fade-in navbar-glass">
       {/* Hamburger for mobile */}
       {isMobile && (
         <button
@@ -68,9 +60,8 @@ const Navbar = () => {
           <li key={item.label}>
             <a
               href={item.to}
-              className="hover:text-accent-green transition-colors duration-170 text-accent-gradient text-xl font-bold tracking-wide font-orbitron drop-shadow-[0_0_6px_#22d3ee25]"
+              className="hover:text-accent-green transition-colors duration-170 text-accent-blue text-lg font-semibold tracking-wide font-mono drop-shadow-[0_0_6px_#22d3ee25]"
               onClick={handleNavClick}
-              style={{ textShadow: "0 1px 12px #39ff1428" }}
             >
               {item.label}
             </a>
@@ -88,10 +79,9 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className="rounded-full hover:bg-accent-green/20 p-2 transition-colors border border-transparent"
-            style={{ boxShadow: '0 0 0.5rem #39ff146a' }}
+            className="rounded-full hover:bg-[#24fd3412] p-2 transition-colors border border-transparent hover:border-accent-green"
           >
-            <social.icon className="text-accent-gradient" size={22} />
+            <social.icon className="text-accent-blue hover:text-accent-green" size={20} />
           </a>
         ))}
       </div>

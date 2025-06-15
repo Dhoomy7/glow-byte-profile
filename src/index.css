@@ -1,122 +1,104 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom body and background inspired by screenshot */
 body {
   font-family: 'JetBrains Mono', 'monospace';
-  background: radial-gradient(circle at 60% 20%, #132a1b 0%, #1b2c28 60%, #191f17 100%);
+  background: linear-gradient(120deg, #112031 0%, #283972 55%, #0e3547 100%);
   color: #EAF7FD;
   min-height: 100vh;
   letter-spacing: 0.01em;
   background-repeat: no-repeat;
-  position: relative;
 }
 
-/* Star background overlay for spacey effect */
-body::before {
-  content: '';
-  position: fixed;
-  pointer-events: none;
-  inset: 0;
-  z-index: 0;
-  background: 
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'><circle cx='100' cy='300' r='1' fill='white' opacity='.2'/><circle cx='450' cy='50' r='1.5' fill='white' opacity='.18'/><circle cx='900' cy='600' r='.8' fill='white' opacity='.16'/><circle cx='300' cy='700' r='1.1' fill='white' opacity='.13'/><circle cx='1000' cy='200' r='1.3' fill='white' opacity='.16'/></svg>");
-  background-size: cover;
-  background-repeat: repeat;
-  mix-blend-mode: lighten;
+.hero-gradient {
+  background: linear-gradient(125deg, rgba(44,217,255,.08) 18%, rgba(51,238,110,0.08) 90%), rgba(16,24,32,0.94);
+  box-shadow: 0 12px 48px 0 rgba(0,255,247,0.10), 0 4px 48px 0 #2dd4bf23;
+  border: 1.6px solid #2DD4BF;
 }
 
-/* ----------------- Typography --------------- */
-h1, h2, .font-orbitron {
-  font-family: 'Orbitron', Arial, sans-serif;
-  letter-spacing: 0.02em;
-}
-
-/* Bold green highlight effect for headings */
-.text-accent-gradient {
-  background: linear-gradient(90deg, #39ff14 23%, #00fff7 100%);
+.text-gradient-blue {
+  background: linear-gradient(90deg,#22d3ee 10%, #66ffcc 95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.text-ambient-green {
-  color: #39ff14;
-  text-shadow: 0 0 12px #2f8c30, 0 0 24px #39ff1490;
-}
-
-.text-ambient-blue {
-  color: #8ddcfe;
-  text-shadow: 0 0 8px #18e5ff, 0 0 22px #00fff744;
-}
-
-/* Section Cards */
-.card-glass {
-  background: linear-gradient(119deg, rgba(24,28,26,0.92) 4%,rgba(26,34,26,0.98) 100%);
-  box-shadow: 0 2px 38px 0 #39ff1492, 0 0 0 1.5px #58dbfe55;
-  border-left: 6px solid #39ff14;
-  border-radius: 1.3rem;
-  backdrop-filter: blur(9px);
-  border-top: 2px solid #00fff7a2;
-}
-
-/* Custom primary/secondary accent */
-.bg-neon-green-gradient {
-  background: linear-gradient(90deg,#39ff14 0%, #00fff7 70%);
-}
-.bg-card-dark {
-  background-color: #202925;
-}
-/* Navbar glass effect */
-.navbar-glass {
-  background: linear-gradient(120deg,#171e17ef 70%,#182c1dcb 100%);
-  border: 1.5px solid #39ff14;
-  box-shadow: 0 0 18px 4px #39ff1460;
-}
-
 .glow-text-enhanced {
-  color: #39ff14;
-  text-shadow: 0 0 16px #39ff1496, 0 0 35px #00fff781;
+  color: #54f595;
+  text-shadow: 0 0 12px #23fd9b, 0 0 28px #4effb0;
   animation: glowPulseMain 1.35s infinite alternate;
 }
-
 @keyframes glowPulseMain {
-  0% { text-shadow: 0 0 16px #39ff146a, 0 0 28px #19ffd1; }
-  100% { text-shadow: 0 0 36px #39ffecbb, 0 0 48px #80ffd0bb; }
+  0% { text-shadow: 0 0 10px #58ffca, 0 0 36px #19ffd1; }
+  100% { text-shadow: 0 0 22px #39ffecbb, 0 0 48px #80ffd0bb; }
 }
 
-/* Badge for intro/skills */
-.badge-glass-green {
-  background: rgba(42, 255, 40, 0.13);
-  border: 1.7px solid #39ff14;
-  color: #39ff14;
-  box-shadow: 0 0 8px 2px #39ff14ad;
-  border-radius: 1.7rem;
-  font-weight: bold;
-  padding: 0.28em 1em;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
-  margin-bottom: 1em;
+.glow-blue-text-enhanced {
+  color: #58dbfe;
+  text-shadow: 0 0 8px #81e8ff, 0 0 22px #19ffd1;
+  animation: glowPulseMain 1.1s infinite alternate;
+}
+.card-glass {
+  background: linear-gradient(125deg, rgba(33,62,91,0.78) 0%, rgba(23,31,45,0.95) 100%);
+  box-shadow: 0 2px 40px 0 #2dd4bf2b, 0 0 0 1.5px #58dbfe55;
+  border-left: 5px solid #58dbfe;
+  border-radius: 1.25rem;
+  backdrop-filter: blur(7.5px);
 }
 
-/* Glow focus ring for inputs/buttons/links */
-:focus-visible {
-  outline: 2.5px solid #39ff14 !important;
-  box-shadow: 0 0 0 2.5px #39ff14cc !important;
+/* Accent border for main sections */
+.border-gradient-greenblue {
+  border-image: linear-gradient(90deg,#36ffd6,#7fffd4) 1;
 }
 
-/* Scrollbar styling */
+/* Neon/muted section glow borders */
+.shadow-glow-green {
+  box-shadow: 0 0 12px 2px #39ff14, 0 0 44px 9px #23fd9bcc;
+}
+.shadow-glow-blue {
+  box-shadow: 0 0 12px 2px #00fff7, 0 0 44px 9px #19ffd155;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
-  background: #142025;
+  background: #142033;
 }
 ::-webkit-scrollbar-thumb {
   background: #23354a;
   border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-size: 24px 24px;
+  }
+}
+
+/* 3D section animation */
+@layer utilities {
+  .animate-section-3d {
+    animation: sectionIn3d 0.8s cubic-bezier(0.39, 0.58, 0.57, 1) both;
+    will-change: transform, opacity;
+    perspective: 2000px;
+  }
+}
+@keyframes sectionIn3d {
+  0% {
+    opacity: 0;
+    transform: rotateY(-45deg) translateY(60px) scale(0.92);
+    filter: blur(8px) brightness(1.1);
+  }
+  60% {
+    opacity: 1;
+    transform: rotateY(12deg) translateY(-10px) scale(1.01);
+    filter: blur(0) brightness(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: blur(0) brightness(1);
+  }
 }

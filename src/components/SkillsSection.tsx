@@ -21,20 +21,12 @@ const skills = [
 const SkillsSection = () => (
   <section
     id="skills"
-    className="w-full max-w-3xl mx-auto mb-12 card-glass p-11 backdrop-blur-lg animate-section-3d"
+    className="w-full max-w-3xl mx-auto mb-12 card-glass p-10 backdrop-blur-lg animate-section-3d"
   >
-    <h2 className="text-3xl md:text-4xl font-extrabold text-accent-gradient font-orbitron mb-5 text-center tracking-wide"
-      style={{ textShadow: "0 0 10px #39ff14a2" }}
-    >Skills</h2>
-    <div className="flex flex-wrap mt-3">
+    <h2 className="text-2xl md:text-3xl font-bold text-gradient-blue mb-3 text-center">Skills</h2>
+    <div className="flex flex-wrap mt-2">
       {skills.map((skill) => (
-        <span
-          key={skill}
-          className="badge-glass-green text-base font-mono mb-3 mr-3"
-          style={{ minWidth: 94 }}
-        >
-          {skill}
-        </span>
+        <SkillBadge key={skill}>{skill}</SkillBadge>
       ))}
     </div>
     {/* Up arrow to scroll to hero */}
@@ -47,7 +39,7 @@ const SkillsSection = () => (
             heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         }}
-        className="bg-transparent border-none shadow-none p-0 transition focus-visible:ring-2 focus-visible:ring-accent-green active:scale-95 group outline-none"
+        className="bg-transparent border-none shadow-none p-0 transition focus-visible:ring-2 focus-visible:ring-accent-green active:scale-95 group"
         style={{
           transition: "background 0.18s, transform 0.15s",
         }}
@@ -74,3 +66,4 @@ const SkillsSection = () => (
 );
 
 export default SkillsSection;
+

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,19 +19,17 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'orbitron': ['Orbitron', 'Arial Rounded MT Bold', 'Arial', 'sans-serif'],
 				'mono': ['JetBrains Mono', 'Consolas', 'monospace'],
 			},
 			colors: {
 				'neon-green': '#39ff14',
 				'neon-blue': '#00fff7',
 				'neon-purple': '#ad00ff',
-				'dark-bg': '#141814',
-				'card-dark': '#181d19',
-				'main-bg': '#0f2016',
+				'dark-bg': '#101820',
+				'card-dark': '#171f2d',
+				'main-bg': '#112031',
 				'accent-blue': '#22d3ee',
-				'accent-green': '#38ff9b',
-				'accent-green-glow': '#48ff00',
+				'accent-green': '#23fd9b',
 				'main-deep': '#0e3547',
 				'glass': 'rgba(23,31,45, 0.80)',
 			},
@@ -39,9 +38,8 @@ export default {
 				'neon-blue': '0 0 8px #00fff7, 0 0 16px #00fff7',
 			},
 			boxShadow: {
-				'glow-green': "0 2px 24px 2px #39ff14bb, 0 0 44px 9px #23fd9bcc",
+				'glow-green': "0 0 12px 2px #39ff14, 0 0 44px 9px #23fd9bcc",
 				'glow-blue': "0 0 8px 2px #00fff7, 0 0 32px 4px #00fff744",
-				'green-outline': "0 0 0 3px #39ff1477",
 			},
 			animation: {
 				'glow': 'glowPulse 1.2s infinite alternate',
@@ -53,10 +51,10 @@ export default {
 				},
 			},
 			backgroundImage: {
-				'main-gradient': "radial-gradient(circle at 60% 20%, #132a1b 0%, #1b2c28 52%, #191f17 100%)",
+				'main-gradient': "linear-gradient(120deg, #112031 0%, #283972 55%, #0e3547 100%)",
 			},
 			backgroundSize: {
-				'grid': '44px 44px',
+				'grid': '40px 40px',
 			},
 		}
 	},
