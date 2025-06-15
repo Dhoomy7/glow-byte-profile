@@ -15,7 +15,7 @@ const EducationSection = () => (
         <span className="font-semibold text-neon-blue">High School</span> – King Fahd Secondary School
       </li>
     </ul>
-    <SectionDownArrow nextSectionId="projects" />
+    <SectionDownArrow nextSectionId="experience" />
   </section>
 );
 

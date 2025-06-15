@@ -17,7 +17,7 @@ const ExperienceSection = () => (
         <div>Worked on Android apps and Firebase-based websites, contributing to both front-end and back-end.</div>
       </article>
     </div>
-    <SectionDownArrow nextSectionId="education" />
+    <SectionDownArrow nextSectionId="projects" />
   </section>
 );
 
