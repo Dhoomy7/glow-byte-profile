@@ -10,7 +10,10 @@ type Project = {
   gif: string;
 };
 
-const ProjectCard = ({ name, description, stack, github, gif }: Project) => {
+const FLUTTER_LOGO =
+  "https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png";
+
+const ProjectCard = ({ name, description, stack, github }: Project) => {
   // 3D tilt effect
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -45,9 +48,9 @@ const ProjectCard = ({ name, description, stack, github, gif }: Project) => {
       </div>
       <div className="flex flex-col md:flex-row items-center gap-4 mb-3">
         <img
-          src={gif}
-          alt={`Demo of ${name}`}
-          className="w-[260px] h-[140px] rounded shadow-neon-blue object-cover border border-slate-600 bg-black/60 transition-all duration-200 group-hover:scale-105"
+          src={FLUTTER_LOGO}
+          alt="Flutter Logo"
+          className="w-[90px] h-[90px] rounded bg-white shadow-neon-blue border border-slate-600 object-contain transition-all duration-200 group-hover:scale-105"
         />
         <div className="text-base text-slate-100">{description}</div>
       </div>
@@ -66,3 +69,4 @@ const ProjectCard = ({ name, description, stack, github, gif }: Project) => {
 };
 
 export default ProjectCard;
+
