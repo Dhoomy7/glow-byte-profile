@@ -1,4 +1,3 @@
-
 import { Github, Mail, Linkedin, Menu } from "lucide-react";
 import { useState } from "react";
 import { useIsMobile } from "../hooks/use-mobile";
@@ -9,7 +8,6 @@ const navItems = [
   { label: "Education", to: "#education" },
   { label: "Projects", to: "#projects" },
   { label: "Skills", to: "#skills" },
-  { label: "Contact", to: "#contact" },
 ];
 
 const socials = [
@@ -92,4 +90,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
