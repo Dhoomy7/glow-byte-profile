@@ -4,33 +4,37 @@ import { OrbitControls, Float, Environment, Html } from "@react-three/drei";
 import { useRef, useState } from "react";
 import SectionDownArrow from "./SectionDownArrow";
 
-// Floating image with 3D movement, showing the user's uploaded image, with fallback
-const FloatingProfileImage = () => {
-  const [imgSrc, setImgSrc] = useState("/lovable-uploads/c11983e2-dd32-4a74-9189-9d895231dc19.png");
-  return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Html center position={[0, 0, 0]} style={{ pointerEvents: "none" }}>
-        <div className="flex flex-col items-center">
-          <img
-            src={imgSrc}
-            alt="Profile"
-            onError={() => setImgSrc("https://placehold.co/180x180?text=No+Image")}
-            style={{
-              width: 180,
-              height: 180,
-              objectFit: "cover",
-              background: "#101820",
-              display: "block",
-            }}
-          />
-        </div>
-      </Html>
-    </Float>
-  );
-};
+// Main hero image - editable path!
+const HERO_IMAGE = "/lovable-uploads/c11983e2-dd32-4a74-9189-9d895231dc19.png";
+
+// Floating image with 3D movement for Canvas background (optional, old)
+// const FloatingProfileImage = () => {
+//   const [imgSrc, setImgSrc] = useState(HERO_IMAGE);
+//   return (
+//     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
+//       <Html center position={[0, 0, 0]} style={{ pointerEvents: "none" }}>
+//         <div className="flex flex-col items-center">
+//           <img
+//             src={imgSrc}
+//             alt="Profile"
+//             onError={() => setImgSrc("https://placehold.co/180x180?text=No+Image")}
+//             style={{
+//               width: 180,
+//               height: 180,
+//               objectFit: "cover",
+//               background: "#101820",
+//               display: "block",
+//             }}
+//           />
+//         </div>
+//       </Html>
+//     </Float>
+//   );
+// };
 
 const Hero3DSection = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
+  const [imgSrc, setImgSrc] = useState(HERO_IMAGE);
 
   // Smooth scroll to #about when arrow button is clicked
   const handleArrowClick = () => {
@@ -54,7 +58,6 @@ const Hero3DSection = () => {
       >
         <ambientLight intensity={1.2} />
         <directionalLight position={[2, 4, 6]} color="#00fff7" intensity={1.5} />
-        <FloatingProfileImage />
         <Environment preset="night" />
         <OrbitControls
           enableZoom={false}
@@ -66,7 +69,24 @@ const Hero3DSection = () => {
           autoRotateSpeed={1.15}
         />
         <Html fullscreen className="top-0 left-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center justify-center h-full w-full pt-[170px] pb-0 gap-4">
+          <div className="flex flex-col items-center justify-center h-full w-full pt-[110px] pb-0 gap-4">
+            {/* New Image block before the name */}
+            <div className="flex justify-center mb-4 pointer-events-auto">
+              <img
+                src={imgSrc}
+                alt="Profile"
+                onError={() => setImgSrc("https://placehold.co/160x160?text=No+Image")}
+                className="rounded-full shadow-glow-green border-[3px] border-[#0c573a] bg-[#101820] object-cover"
+                style={{
+                  width: 140,
+                  height: 140,
+                  objectFit: "cover",
+                  background: "#101820",
+                  borderRadius: "50%",
+                  boxShadow: "0 0 20px 2px #39ff1466",
+                }}
+              />
+            </div>
             <h1 className="text-4xl md:text-6xl font-extrabold font-mono mb-0 text-center w-full hero-title glow-text-enhanced">
               Hi, I&apos;m Abdulrahman
             </h1>
